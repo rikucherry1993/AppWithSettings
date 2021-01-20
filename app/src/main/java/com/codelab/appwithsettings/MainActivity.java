@@ -2,19 +2,16 @@ package com.codelab.appwithsettings;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.PreferenceManager;
 
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,10 +29,11 @@ public class MainActivity extends AppCompatActivity {
         // third para: override with default value every time MainActivity started or not.
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
-        Boolean switchPref = PreferenceManager.getDefaultSharedPreferences(this)
-                                .getBoolean(SettingsActivity.KEY_PREF_EXAMPLE_SWITCH, false);
+        String switchPref = PreferenceManager.getDefaultSharedPreferences(this)
+                                .getString(SettingsActivity.KEY_PREF_EXAMPLE_TEXT,"");
 
-        Toast.makeText(this, switchPref.toString(), Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(this, switchPref, Toast.LENGTH_SHORT).show();
 
     }
 
@@ -58,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
+        }
+
+        if (id == R.id.action_settings2) {
+            Toast.makeText(this,
+                    "I made the second setting option",Toast.LENGTH_SHORT).show();
+
+            closeOptionsMenu();
+
         }
 
         return super.onOptionsItemSelected(item);

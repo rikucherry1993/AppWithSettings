@@ -1,12 +1,15 @@
 package com.codelab.appwithsettings;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
     public static final String KEY_PREF_EXAMPLE_SWITCH = "example_switch";
+    public static final String KEY_PREF_EXAMPLE_CHECKBOX = "example_check";
+    public static final String KEY_PREF_EXAMPLE_TEXT = "example_text";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

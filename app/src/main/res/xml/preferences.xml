@@ -6,4 +6,18 @@
         android:key="example_switch"
         android:summary="@string/switch_title"
         android:title="@string/switch_summary" />
+
+    <androidx.preference.CheckBoxPreference
+        android:defaultValue="false"
+        android:key="example_check"
+        android:summary="@string/check_box_summary"
+        android:title="@string/check_box_title"
+        />
+
+    <androidx.preference.EditTextPreference
+        android:defaultValue="@string/text_title"
+        android:key="example_text"
+        android:summary="@string/text_summary"
+        android:title="@string/text_title"
+        />
 </androidx.preference.PreferenceScreen>
